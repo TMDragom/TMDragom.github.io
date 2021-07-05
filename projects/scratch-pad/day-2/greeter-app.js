@@ -41,12 +41,19 @@
 // c: output greeting is case sensitive
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
+    // use an if else statement to print the appropriate greeting
+    // use control flow and consistent conditionals throughout
+    
+    // if time 0-11, print 'Good Morning'
     if(hour < 12) {
         return console.log('Good Morning!');
+    // if time 12-16, print 'Good Afternoon'
     } else if(hour < 17) {
         return console.log('Good Afternoon!');
+    // if time 17 - 21, print 'Good Evening'
     } else if(hour < 22) {
         return console.log ('Good Evening!');
+    // if time 22 - 24, print 'Good Night'
     } else {
         return console.log ('Good Night!');
     }

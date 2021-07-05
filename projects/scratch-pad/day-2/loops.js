@@ -20,6 +20,7 @@ function printArrayValues(array) {
   // stop: last index (i < array.length)
   // iterate: forward by one (i++)
     for(let i = 0; i < array.length; i++) {
+  // print value at each index
       console.log(array[i]);
     }
   
@@ -44,6 +45,7 @@ function printArrayValuesInReverse(array) {
   // stop: first index (i = 0)
   // iterate: minus 1 (i--)
     for(let i = array.length - 1; i >= 0; i--) {
+  // print value at each index
       console.log(array[i]);
     }
   
@@ -60,10 +62,12 @@ function printArrayValuesInReverse(array) {
  // c: return an array
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  // use a for in loop to iterate through keys of an object
-  // assign the key names to a new array
+  // define a variable that will hold an array of object key names
     let keysArray = [];
+    
+   // use a for in loop to iterate through keys of an object   
     for(var key in object) {
+   // assign the key names to a new array
       keysArray.push(key);
     }
     return keysArray;
@@ -83,8 +87,9 @@ function getObjectKeys(object) {
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   // use a for in loop to iterate through object
-  // print each key to console
+  
   for(var key in object) {
+  // print each key name to console
     console.log(key);
   }
   
@@ -102,10 +107,13 @@ function printObjectKeys(object) {
  // c: return an array
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  // use a for in loop to iterate through keys of an object
-  // assign the key values to a new array
+
+ // define a variable that will hold an array of object key values
     let keyValuesArray = [];
+    // use a for in loop to iterate through keys of an object
+    
     for(var key in object) {
+    // assign the key values to a new array
       keyValuesArray.push(object[key]);
     }
     return keyValuesArray;

@@ -14,7 +14,7 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-    return string.length;
+    return string.length; //returns a number
 }
     
 
@@ -27,7 +27,7 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-    return string.toLowerCase();
+    return string.toLowerCase(); // returns input argument in lowercase
 };
 
 
@@ -40,7 +40,7 @@ function toLowerCase(string) {
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
 
-return string.toUpperCase();
+return string.toUpperCase(); //returns given arg in uppercase
 
     // YOUR CODE ABOVE HERE //
 }
@@ -68,6 +68,7 @@ function toDashCase(string) {
     let emptySpace = new RegExp(' ', 'g');
     // return the string in lowercase AND replace all spaces with dashes
     return string.toLowerCase().replace(emptySpace, '-');
+    // next time use split and join!
     
     
 
@@ -129,7 +130,7 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    return stringOne + stringTwo;
+    return stringOne + stringTwo; // returns one string
 
 
     // YOUR CODE ABOVE HERE //
@@ -145,9 +146,13 @@ function concat(stringOne, stringTwo) {
  * TIP: This Function pulls out all the arguments passed to it and stores them
  *      in an Array called args.
  */
-function join(stringOne, stringTwo) {
+function join(stringOne, stringTwo, stringThree, stringFour) {
     // YOUR CODE BELOW HERE //
+    // Create a variable to represent all arguments passed into functions
+    // Should accept any num of arguments as an array
     var args = Array.from(arguments);
+    
+    // Convert array of arguments into a single string
     return args.join('');
 
     // YOUR CODE ABOVE HERE //
@@ -164,6 +169,9 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    
+    // Use ternary operator to check for the longer of two strings
+    // return the longer string
    return stringOne.length > stringTwo.length ? stringOne : stringTwo;
 
 
@@ -179,9 +187,18 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // create a variable to store all arguments as a single array
     var args = Array.from(arguments);
+    
+    // use sort method to order elements of array
     args = args.sort();
-    return args.indexOf(stringTwo) - args.indexOf(stringOne);
+    
+    // check the array for the location of each string argument
+    // manipulate answer to pass test
+    //original answer:
+    //return args.indexOf(stringTwo) - args.indexOf(stringOne);
+    
+    return args.indexOf(stringOne) - args.indexOf(stringTwo);
     
     
 
@@ -199,9 +216,17 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+        // create a variable to store all arguments as a single array
     var args = Array.from(arguments);
+    
+     // check the array for the location of each string argument
+    // manipulate answer to pass test   
     args = args.sort();
-    return args.indexOf(stringOne) - args.indexOf(stringTwo);
+    
+    //original answer:
+    //return args.indexOf(stringOne) - args.indexOf(stringTwo);
+    
+    return args.indexOf(stringTwo) - args.indexOf(stringOne);
 
     // YOUR CODE ABOVE HERE //
 }

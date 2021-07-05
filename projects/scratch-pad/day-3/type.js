@@ -14,6 +14,7 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
+// use Array.isArray prototype method to test if value is a method
     return Array.isArray(value);
     
     
@@ -30,17 +31,11 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-  if(Array.isArray(value)) {
-    return false;
-  } else if(value === null) {
-    return false;
-  } else if(value instanceof Date) {
-    return false;
-  } else if(typeof value === 'undefined') {
-    return false;
-  } else if(typeof value === 'object') {
-    return true;
-  }
+// use typeof method to test if value is an object intended as a collection
+// eliminate objects that are arrays, null values and instances of date constructor
+
+    return typeof value === 'object' && !Array.isArray(value) && value !== null && value instanceof Date === false;
+
 
     
     
@@ -56,7 +51,10 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+// use typeof method to test if value is an object (including arrays) intended as a collection
+// eliminate objects that are null values and instances of date constructor
+      return typeof value === 'object' && value !== null && !(value instanceof Date);
+
     
     
     
@@ -82,8 +80,31 @@ function isCollection(value) {
  *    typeOf("javascript") -> "string"
  *    typeOf([1,2,3]) -> "array"
  */ 
-function typeOf(value) {
+function typeOf(val) {
     // YOUR CODE BELOW HERE //
+// test if value is null otherwise type of will return it as an object
+// is == or === approriate? Both work
+        if(val == null) {
+        return 'null';
+        
+// use typeof to return typeof when appropriate
+    } else if(typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean' || typeof val === 'function') {
+        return typeof val;
+        
+// use Array.isArray method instead of typeof for arrays, else will return as object
+    } else if (Array.isArray(val)) {
+        return 'array';
+        
+// use instanceof to test for Date, else will return as object
+    } else if (val instanceof Date) {
+        return 'date';
+
+// if coded correctly, everything else should return an object
+// use isObject() function coded above
+    } else if (isObject(val)) {
+        return 'object'; 
+    }
+
     
     
     

@@ -23,7 +23,27 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
+  // create a variable to collect output
+    let count = [];
+  
+  // if first arg is lower than second arg:
+  // use a forward for loop
+    if (start < end) {
+      for (let i = start; i <= end; i++) {
+  // add each incremented number to new array
+        count.push(i);
+      }
+    return count;
+  // if first arg is higher than second arg:
+  // use a reverse for loop
+    } else {
+  // add each incremented number to new array
+      for (let i = start; i >= end; i--) {
+        count.push(i);
+      }
+    return count;
+    }
+  
     
     
     
